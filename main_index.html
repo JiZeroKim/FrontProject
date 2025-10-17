@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html leng="kor">
+
+<head>
+
+</head>
+
+<body>
+    <style>
+        table {
+            vertical-align: middle;
+            margin: auto;
+            border-collapse: collapse;
+            /* 테두리 겹침 방지 */
+            width: 1024px;
+            height: 20px;
+            background-color: rgb(206, 221, 238);
+        }
+
+        td>table {
+            vertical-align: middle;
+            margin: auto;
+            width: 70%;
+        }
+
+        tr,
+        td {
+            white-space: nowrap;
+            border: 2px solid black;
+            /* 실선 테두리 */
+            padding: 8px;
+            text-align: center;
+        }
+
+        as table h2 {
+            font-size: 40px;
+            color: black;
+        }
+
+        table td span {
+            color: black;
+            border: 2px solid;
+            margin-left: 100px;
+            font-size: 28px;
+        }
+
+        table td span:hover {
+            color: black;
+            background-color: rgb(153, 153, 153);
+        }
+
+        h3 {
+            color: black;
+            width: 350px;
+            background-color: white;
+            height: 30px;
+            text-align: center;
+        }
+
+        h3:hover {
+            /* 액션 부여 */
+            background-color: rgb(189, 186, 186);
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .search-container {
+            justify-content: center;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        input[type="text"] {
+            padding: 8px;
+            height: 4px;
+            width: 90px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            font-size: 12px;
+        }
+
+        button {
+            padding: 6px 12px;
+            background-color: #094181;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #494b4d;
+        }
+
+        .button-container {
+            display: flex;
+            /* 가로로 나란히 */
+            gap: 20px;
+            /* 버튼 사이 간격 */
+            justify-content: center;
+            /* 가운데 정렬 (선택사항) */
+            margin-top: 20px;
+            /* 위쪽 여백 */
+        }
+    </style>
+
+    <table border="1">
+        <tr>
+            <td colspan="4">
+                <h2>이 구역의 잡동사니</h2>
+                </h12>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="3">
+                <p></p>
+                <table>
+                    <tr>
+                        <span>20대</span>
+                        <span>30대</span>
+                        <span>50대</span>
+                    </tr>
+                </table>
+
+            </td>
+
+            <td>
+                <div class="search-container">
+                    <input type="text" id="searchBox" placeholder="검색어를 입력하세요">
+                    <button onclick="search()">검색</button>
+                </div>
+            </td>
+
+        </tr>
+
+        <tr>
+            <td><img src="./image/물고기.jfif" width="270"></td>
+            <td><img src="./image/물고기.jfif" width="270"></td>
+            <td><img src="./image/물고기.jfif" width="270"></td>
+            <td>
+                <table>
+                    <tr>
+                        <td>아이디</td>
+                        <td><input type="text" size="10"></td>
+                    </tr>
+                    <tr>
+                        <td>비밀번호</td>
+                        <td><input type="password" size="10"></td>
+                </table>
+
+                <p></p>
+
+                <table>
+                    <div class="button-container">
+                        <button>로그인</button>
+                        <button>종료</button>
+                    </div>
+                </table>
+        </tr>
+
+        <tr>
+            <td>소소한 소식창</td>
+            <td>소소한 소식창</td>
+            <td>소소한 소식창</td>
+            <td><img src="./image/그래프.png" width="200"></td>
+
+        </tr>
+
+        <tr>
+            <td colspan="4">주소</td>
+
+        </tr>
+
+    </table>
+</body>
+
+</html>

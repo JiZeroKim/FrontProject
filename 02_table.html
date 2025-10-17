@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2> 오늘은 레이아웃 잡기</h2>
+    <p> 레이아웃은 테이블, div로 많이 잡는다 </p>
+    <p> 오늘은 테이블로 레이아웃을 잡아 본다.</p>
+    <style>
+        table {
+            border-collapse: collapse;
+            /* 선 겹침 제거 */
+            width: 1024px;
+            background-color: rgb(98, 190, 152);
+        }
+
+        td>table {
+            width: 100%;
+        }
+
+        tr,
+        td {
+            border: 1px solid black;
+            /* 실선(border-style: solid) */
+            padding: 8px;
+            text-align: center;
+        }
+
+        table h2 {
+            /* table > h2 는 table 자손만 선택 */
+            /* or td > h2 는 td를 선택자로 해서 자식 선택 */
+            color: white;
+        }
+
+        table td span {
+            color: white;
+            border: 1px solid;
+            margin-left: 20px;
+        }
+
+        table td span:hover {
+            color: black;
+            background-color: gray;
+        }
+
+        tr {
+            /* background-color: #f2f2f2; */
+        }
+    </style>
+    <table border="1"> <!-- 테이블은 행<tr>과 열<td>-->
+        <tr>
+            <td colspan="4">
+                <h2> 구피 키우기 </h2>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4">
+                <span>Home</span>
+                <span> <a href='./01_index.html'>우리수족관소개</a></span>
+                <span>분양정보</span>
+                <span>자유게시판</span>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table>
+                    <tr>
+                        <td><img src="./img/fish.jpg" width="200" height="200"></td>
+                    </tr>
+                    <tr>
+                        <td>노란색 물고기</td>
+                    </tr>
+                </table>
+
+
+
+            </td>
+            <td>
+                <table>
+                    <tr>
+                        <td><img src="./img/fish.jpg" width="200" height="200"></td>
+                    </tr>
+                    <tr>
+                        <td>검정색 눈</td>
+                    </tr>
+                </table>
+            </td>
+            <td>
+                <table>
+                    <tr>
+                        <td><img src="./img/fish.jpg" width="200" height="200"></td>
+                    </tr>
+                    <tr>
+                        <td>매력적인 꼬리</td>
+                    </tr>
+                </table>
+            </td>
+            <td>
+                <table>
+                    <tr>
+                        <td>아이디</td>
+                        <td><input type="text" size="10"></td>
+                    </tr>
+                    <tr>
+                        <td>암호</td>
+                        <td><input type="passsword" size="10"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <button>로그인</button>
+                            <button>회원가입</button>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4">13</td>
+        </tr>
+
+    </table>
+</body>
+
+</html>
