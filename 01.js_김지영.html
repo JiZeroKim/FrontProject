@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>오늘의 메뉴</h1>
+    <form action="" method="post">
+        <input type="button" value="제목을 녹색으로 바꾸기" id="btn1"><br>
+        글자색입력 <input type="text" id="title_color">
+        <input type="button" value="글자색바꾸기" id="btn2"><br>
+        <hr>
+        <input type="checkbox" id="check">
+        단어 <input type="text" id="info"> <input type="button" value="단어저장" id="btn3">
+        <hr>
+        <span id="info2">* 단어가 출력 되요</span>
+    </form>
+</body>
+
+</html>
+
+<script>
+    // 1번 문제                     // () => {} '(){}' 함수 + '=>' 람다식
+    window.onload = function () { // 문서가 로드될 때 기능을 실행하는 코드
+        //  분석: 버튼에 이벤트를 등록해야한다. 요소를 선택.
+        document.getElementById('btn1').addEventListener('click',
+            () => {
+                let h1_text = document.getElementsByTagName('h1')[0]
+                h1_text.style.color = 'green'
+                h1_text.innerHTML = '점심메뉴'
+            })
+
+        // 2번, 4번 문제
+        document.getElementById('btn2').addEventListener('click',
+            () => {
+                let h1_text = document.getElementsByTagName('h1')[0]
+                let title_color = document.getElementById('title_color')
+                let color = ['red', 'orange', 'blue', 'green']
+
+                // console.log(color);
+                // console.log(color.length);
+                // color[color.length] = 'gray';
+                // console.log(color);
+                // color.push('violet')
+                // console.log(color)
+
+                // 구석기 시대 for문 방법
+                // for(let i=0; i < color.length; i++){
+                //     console.log(color[i])
+                // }
+
+                // 요즘 for문 방법
+                // for(let i in color){
+                //     console.log(i, color[i])
+                // }
+
+                // title_color = title_color.value;
+                // let flag = 0;
+                // color.forEach( (e) =>{
+                //     if(title_color == e){
+                //         flag = 1;
+                //     }
+                // })
+
+                // if(flag == 1){
+                //     h1_text.style.color = title_color;
+                // }else{
+                //     alert('색상이 잘못됨')
+                // }
+
+                title_color = title_color.value;
+                if (color.includes(title_color)) {
+                    h1_text.style.color = title_color;
+                } else {
+                    alert('색상이 잘못 됨')
+                }
+
+                // 내가 문제푼 것
+                // for (let i = 0; i < color.length; i++) {
+                //     if (title_color.value == color[i]) {
+                //         h1_text.style.color = title_color.value;
+                //         return;
+                //     }
+                // }
+                // alert('다른색 사용 불가')
+            })
+
+        // 2번 문제 응용
+        // document.getElementById('title_color').addEventListener('keyup',
+        //     () => {
+        //         let c = document.getElementById('title_color')
+        //         let h = document.getElementsByTagName('h1')[0]
+        //         h.innerHTML = c.value
+        //     })
+
+
+        // 3번, 5번 문제
+        let wordArray = [];
+        document.getElementById('btn3').addEventListener('click',
+            () => {
+                let adding_text = document.getElementById('info2');
+                let text = document.getElementById('info').value.trim();
+                let check = document.getElementById('check').checked;
+
+                if (text !== '') {
+                    if (check) {
+                        wordArray.push(`<span style = "color : green">${text}</span>`);
+                    }else {
+                        wordArray.push(text);
+
+                    }
+                }
+
+                //join => 배열에 있는 value값을 합쳐서 문자열로 리턴해줌 
+                adding_text.innerHTML = wordArray.join(', ');
+
+                document.getElementById('info').value = '';
+                document.getElementById('check').checked = false;
+
+            })
+    }
+
+
+</script>
+
+<!-- 문제1 제목을 녹색으로 바꾸기 버튼을 누르면 제목이 점심메뉴로 변경되고
+ 녹색으로 변경된다.-->
+
+<!-- 문제2 글자색을 입력하고 예를 들어 red, orange, blue, green
+     글자색 바꾸기 버튼을 클릭하면 글자색이 변경이 된다. -->
+
+<!-- 문제3 단어를 입력하면 입력된 단어가 누적되어 단어가 출력 되요 부분에
+    출력된다. 단어가 출력될 때는   첫번째단어, 두번째단어로 콤마로 구분한다.-->
+
+<!-- 문제4. 글자색 입력시 유효값 확인하가
+    문제2에서 글자색을 입력시 red, orange, blue, green 외에는 입력이 불가능하게 한다
+    다른색 입력시 예외처리는 다른색 사용 불가라고 알림창으로 나타나게 한다.
+    알림창은  alert() 함수이다. -->
+
+<!-- 문제5. 단어 앞에 체크 박스를 추가한다. 체크 박스가 클릭 된 상태에서 
+     단어 저장 버튼을 누르면 그 단어만는 녹색으로 표시한다. -->
